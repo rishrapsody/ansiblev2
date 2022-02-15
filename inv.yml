@@ -26,46 +26,46 @@ all:
       hosts:
         palo:
 
-  apac:
-    children:
-      R9:
-      R10:
-      apac-switch:
-  eur:
-    children:
-      R6:
-      R7:
-      eur-switch:
-  us:
-    children:
-      R4:
-      R5:
-      us-switch:
-  core:
-    children:
-      R1:
-      R2:
-      R3:
-      R8:
-      core-sw:
-  lab:
-    children:
-      core:
-      us:
-      eur:
-      apac:
+apac:
+  hosts:
+    R9:
+    R10:
+    apac-switch:
+eur:
+  hosts:
+    R6:
+    R7:
+    eur-switch:
+us:
+  hosts:
+    R4:
+    R5:
+    us-switch:
+core:
+  hosts:
+    R1:
+    R2:
+    R3:
+    R8:
+    core-sw:
+lab:
+  children:
+    core:
+    us:
+    eur:
+    apac:
 
-  devnet:
-    hosts:
-      ios-xr:
-      nx-os:
-  mfs:
-    hosts:
-      palo:
+devnet:
+  hosts:
+    ios-xr:
+    nx-os:
+mfs:
+  hosts:
+    palo:
 
-  cloud:
-    children:
-      devnet:
-      mfs:
+cloud:
+  children:
+    devnet:
+    mfs:
 
 

@@ -1,0 +1,71 @@
+---
+
+all:
+  children:
+    router:
+      hosts:
+        R1:
+        R2:
+        R3:
+        R8:
+        R4:
+        R5:
+        R6:
+        R7:
+        R9:
+        R10:
+        ios-xr:
+        nx-os:
+    switch:
+      hosts:
+        core-sw:
+        apac-switch:
+        eur-switch:
+        us-switch:
+    firewall:
+      hosts:
+        palo:
+
+  apac:
+    children:
+      R9:
+      R10:
+      apac-switch:
+  eur:
+    children:
+      R6:
+      R7:
+      eur-switch:
+  us:
+    children:
+      R4:
+      R5:
+      us-switch:
+  core:
+    children:
+      R1:
+      R2:
+      R3:
+      R8:
+      core-sw:
+  lab:
+    children:
+      core:
+      us:
+      eur:
+      apac:
+
+  devnet:
+    hosts:
+      ios-xr:
+      nx-os:
+  mfs:
+    hosts:
+      palo:
+
+  cloud:
+    children:
+      devnet:
+      mfs:
+
+
